@@ -90,6 +90,26 @@ public class HashMap<K, V> {
 		}
 	}
 
+	/**
+	 * Method to delete the LinkList from array
+	 * 1. Pass the key and find the index of the LinkedList
+	 * 2. Check the arrayList and use the search to check the Node in the LinkedList
+	 * 3. Remove the Node and arrayList
+	 * @param key - key to remove the Mapnode
+	 * @return - return true once it is deleted
+	 */
+	public boolean remove(K key) {
+
+		int index = this.getIndexNumber(key);
+		LinkedList<K> linkedList = this.arrayList.get(index);
+
+		MyMapNode<K, V> myMapNode = (MyMapNode<K, V>) linkedList.search(key);
+
+		linkedList.remove(key);
+		arrayList.remove(index);
+		return true;
+	}
+
 	@Override
 	public String toString() {
 		return "HashMap{" + arrayList + '}';

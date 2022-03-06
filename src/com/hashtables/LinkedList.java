@@ -54,6 +54,31 @@ public class LinkedList<K> {
 		}
 	}
 
+	/**
+	 * [3] Method to remove the node from the LinkedList 1. First we assign the head
+	 * to temp and prev as null 2. Check if the temp key matches the imput key 3.
+	 * Increment the temp and prev till we get the key 4. If key matches make the
+	 * prev as temp and assign the temp next to the prev i.e temp
+	 * 
+	 * @param key - key to remove the node
+	 * @return - return true if we find the node and found and deleted it and we
+	 *         return false
+	 */
+	public boolean remove(K key) {
+
+		Node<K> temp = head;
+		Node<K> prev = null;
+		while (temp != null) {
+			if (temp.getKey() == key) {
+				prev.setNext(temp.getNext());
+				return true;
+			}
+			prev = temp;
+			temp = temp.getNext();
+		}
+		return false;
+	}
+
 	@Override
 	public String toString() {
 		return "\n MyLinkedListNodes{" + head + "}";
