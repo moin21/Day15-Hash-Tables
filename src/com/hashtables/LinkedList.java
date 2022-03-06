@@ -34,14 +34,14 @@ public class LinkedList<K> {
 		}
 		return null;
 	}
+
 	/**
-	 * 1. Check if head or tail is null(empty linked list)
-	 * 2. If not add the element to the tail and make the newNode as tail
+	 * 1. Check if head or tail is null(empty linked list) 2. If not add the element
+	 * to the tail and make the newNode as tail
 	 * 
 	 * @param myNode - Node to append at last
 	 */
 	public void append(Node<K> myNode) {
-		
 
 		if (this.head == null) {
 			this.head = myNode;
